@@ -71,7 +71,7 @@ export default function MainArt() {
             <Legend />
             <CartesianGrid strokeDasharray="3 3" />
             <Bar dataKey="pv" fill="#4A3AFF" background={{ fill: "#eee" }} />
-          </BarChart>
+          </BarChart>   
         </div>
       </div>
     </>

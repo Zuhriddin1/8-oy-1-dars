@@ -2,6 +2,7 @@ import send from "../assets/Letter.svg";
 import task from "../assets/Money.svg";
 import user from "../assets/Users.svg";
 import ChartArt from "./ChartArt";
+import Example from "./LineCharat";
 function Navigation() {
   return (
     <>
@@ -61,7 +62,7 @@ function Navigation() {
           </div>
         </div>
         <ChartArt />
-      </div>
+      </div>  
     </>
   );
 }

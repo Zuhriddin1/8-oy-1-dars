@@ -4,7 +4,7 @@ import Checkbox from "@mui/material/Checkbox";
 import React from "react";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 function valueText(value) {
-  return `${value}°C`;
+  return `${value}`;
 }
 function SliderTime() {
   const [value, setValue] = React.useState([80, 37]);
@@ -19,7 +19,8 @@ function SliderTime() {
       </div>
       <Box sx={{ width: 1300 }}>
         <Slider
-        className="ml-[70px]"
+          className="ml-[70px]"
+          color="danger"
           getAriaLabel={() => "Time range"}
           value={value}
           onChange={handleChange}

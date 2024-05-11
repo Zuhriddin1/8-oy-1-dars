@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Inputs from "../components/Inputs";
+import Slider from "../components/Slider";
 import TrackingPlace from "../components/Tracking-Place";
 function Tracking() {
   return (
@@ -10,8 +11,11 @@ function Tracking() {
           <TrackingPlace></TrackingPlace>
           <hr />
         </div>
-        <div>
+        <div className="mt-[32px] ">
           <Inputs></Inputs>
+        </div>
+        <div>
+          <Slider></Slider>
         </div>
       </div>
     </>

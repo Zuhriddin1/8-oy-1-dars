@@ -7,7 +7,7 @@ function valueText(value) {
   return `${value}°C`;
 }
 function SliderTime() {
-  const [value, setValue] = React.useState([20, 37]);
+  const [value, setValue] = React.useState([80, 37]);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

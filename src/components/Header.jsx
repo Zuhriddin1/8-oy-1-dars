@@ -6,6 +6,7 @@ import main from "../assets/Asosiy.svg";
 import letter from "../assets/sms-tracking.svg";
 import taklif from "../assets/Send.svg";
 import down from "../assets/down.svg";
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <>
@@ -16,9 +17,11 @@ function Header() {
             <div className="flex cursor-pointer">
               <div className="flex flex-row pt-[3px] gap-[8px] pl-[111px] translate-x-6">
                 <img src={main} alt="" />
-                <p className="font-bold text-[14px] leading-[21px] tracking-[0.1px] ">
-                  Asosiy
-                </p>
+                <Link to="/">
+                  <p className="hover:text-blue-500 hover:underline font-bold text-[14px] leading-[21px] tracking-[0.1px] ">
+                    Asosiy
+                  </p>
+                </Link>
               </div>
               <div className=" flex pt-[3px] gap-[8px] ml-[20px] translate-x-6">
                 <img className="" src={user} alt="" />
@@ -28,9 +31,11 @@ function Header() {
               </div>
               <div className=" flex pt-[3px] gap-[8px] ml-[20px] translate-x-10">
                 <img className="" src={letter} alt="" />
-                <p className="font-bold text-[14px] leading-[21px] tracking-[0.1px]">
-                  Tracking loyihalari
-                </p>
+                <Link to={"/tracking"}>
+                  <p className="hover:text-blue-500 hover:underline font-bold text-[14px] leading-[21px] tracking-[0.1px]">
+                    Tracking loyihalari
+                  </p>
+                </Link>
               </div>
               <div className=" flex pt-[3px] gap-[8px] ml-[20px] translate-x-10">
                 <img className="" src={letter} alt="" />

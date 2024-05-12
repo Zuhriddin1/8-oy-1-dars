@@ -250,10 +250,10 @@ const Letter = () => {
               O’zbekcha
             </TabPanel>
             <TabPanel value={value} index={1} dir={theme.direction}>
-              Item Two
+              Русский
             </TabPanel>
             <TabPanel value={value} index={2} dir={theme.direction}>
-              Item Three
+              English
             </TabPanel>
           </SwipeableViews>
           {fabs.map((fab, index) => (
@@ -272,7 +272,7 @@ const Letter = () => {
                 sx={fab.sx}
                 aria-label={fab.label}
                 color={fab.color}
-                className="translate-y-20"
+                className="translate-y-20 "
               >
                 {fab.icon}
               </Fab>

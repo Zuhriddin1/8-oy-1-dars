@@ -57,7 +57,7 @@ const Letter = () => {
             labelId="demo-multiple-name-label"
             id="demo-multiple-name"
             multiple
-            value={personName} // corrected from 'per' to 'personName'
+            value={personName}
             onChange={handleChange}
             input={<OutlinedInput label="Name" />}
             MenuProps={MenuProps}

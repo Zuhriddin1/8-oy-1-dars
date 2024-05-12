@@ -149,24 +149,20 @@ const Letter = () => {
       label: "Expand",
     },
   ];
-
   const handleLinkChange = (event) => {
     const { value } = event.target;
     setLink(value);
   };
-
   const handleChangeItem = (event) => {
     const { value } = event.target;
     setPersonName(typeof value === "string" ? value.split(",") : value);
   };
-
   const handleLinkBlur = () => {
     if (!isValidURL(link)) {
       alert("Please enter a valid URL");
       setLink("");
     }
   };
-
   return (
     <>
       <div>
@@ -232,7 +228,7 @@ const Letter = () => {
             </p>
           </div>
         </div>
-        <div className="translate-y-20">
+        <div className="translate-y-32 -translate-x-2">
           <AppBar position="static" color="default">
             <Tabs
               value={value}
@@ -242,9 +238,9 @@ const Letter = () => {
               variant="fullWidth"
               aria-label="action tabs example"
             >
-              <Tab label="Item One" {...a11yProps(0)} />
-              <Tab label="Item Two" {...a11yProps(1)} />
-              <Tab label="Item Three" {...a11yProps(2)} />
+              <Tab label="O’zbekcha" {...a11yProps(0)} />
+              <Tab label="Русский" {...a11yProps(1)} />
+              <Tab label="English" {...a11yProps(2)} />
             </Tabs>
           </AppBar>
           <SwipeableViews
@@ -253,7 +249,7 @@ const Letter = () => {
             onChangeIndex={handleChangeIndex}
           >
             <TabPanel value={value} index={0} dir={theme.direction}>
-              Item One
+              O’zbekcha
             </TabPanel>
             <TabPanel value={value} index={1} dir={theme.direction}>
               Item Two

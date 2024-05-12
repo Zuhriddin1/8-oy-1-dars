@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -111,6 +111,7 @@ const fabGreenStyle = {
 };
 
 const Letter = () => {
+  const LetRef = useRef("");
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
   const [link, setLink] = React.useState("");
@@ -120,15 +121,15 @@ const Letter = () => {
   const handleAddButtonClick = () => {
     setClickCount(clickCount + 1);
     setShowTextarea(!showTextarea);
-    console.log("Add button clicked!");
+    console.log(LetRef && LetRef.current.value);
   };
   const handleEditButtonClick = () => {
     setClickCount(clickCount + 1);
+    console.log(LetRef && LetRef.current.value);
     setShowTextarea(!showTextarea);
-    console.log("Edit button clicked!");
   };
   const handleSendButtonClick = () => {
-    console.log("Expand button clicked!");
+    console.log(LetRef && LetRef.current.value);
     setClickCount(clickCount + 1);
     setShowTextarea(!showTextarea);
   };
@@ -280,6 +281,7 @@ const Letter = () => {
                   cols="30"
                   placeholder="Enter text here"
                   className="mb-5"
+                  ref={LetRef}
                 ></textarea>
               </div>
             )}
@@ -305,7 +307,7 @@ const Letter = () => {
                       ? handleAddButtonClick
                       : index === 1
                       ? handleEditButtonClick
-                      : handleSendButtonClick 
+                      : handleSendButtonClick
                   }
                 >
                   {fab.icon}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -115,7 +115,23 @@ const Letter = () => {
   const [personName, setPersonName] = React.useState([]);
   const [link, setLink] = React.useState("");
   const [value, setValue] = React.useState(0);
-
+  const [showTextarea, setShowTextarea] = useState(false);
+  const [clickCount, setClickCount] = useState(0);
+  const handleAddButtonClick = () => {
+    setClickCount(clickCount + 1);
+    setShowTextarea(!showTextarea);
+    console.log("Add button clicked!");
+  };
+  const handleEditButtonClick = () => {
+    setClickCount(clickCount + 1);
+    setShowTextarea(!showTextarea);
+    console.log("Edit button clicked!");
+  };
+  const handleSendButtonClick = () => {
+    console.log("Expand button clicked!");
+    setClickCount(clickCount + 1);
+    setShowTextarea(!showTextarea);
+  };
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -256,28 +272,47 @@ const Letter = () => {
               English
             </TabPanel>
           </SwipeableViews>
-          {fabs.map((fab, index) => (
-            <Zoom
-              key={fab.color}
-              in={value === index}
-              timeout={transitionDuration}
-              style={{
-                transitionDelay: `${
-                  value === index ? transitionDuration.exit : 0
-                }ms`,
-              }}
-              unmountOnExit
-            >
-              <Fab
-                sx={fab.sx}
-                aria-label={fab.label}
-                color={fab.color}
-                className="translate-y-20 "
+          <div className="">
+            {showTextarea && (
+              <div>
+                <textarea
+                  rows="0"
+                  cols="30"
+                  placeholder="Enter text here"
+                  className="mb-5"
+                ></textarea>
+              </div>
+            )}
+            {fabs.map((fab, index) => (
+              <Zoom
+                key={fab.color}
+                in={value === index}
+                timeout={transitionDuration}
+                style={{
+                  transitionDelay: `${
+                    value === index ? transitionDuration.exit : 0
+                  }ms`,
+                }}
+                unmountOnExit
               >
-                {fab.icon}
-              </Fab>
-            </Zoom>
-          ))}
+                <Fab
+                  sx={fab.sx}
+                  aria-label={fab.label}
+                  color={fab.color}
+                  className="translate-y-20 "
+                  onClick={
+                    index === 0
+                      ? handleAddButtonClick
+                      : index === 1
+                      ? handleEditButtonClick
+                      : handleSendButtonClick 
+                  }
+                >
+                  {fab.icon}
+                </Fab>
+              </Zoom>
+            ))}
+          </div>
         </div>
       </div>
     </>

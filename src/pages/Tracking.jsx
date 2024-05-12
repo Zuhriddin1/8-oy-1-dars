@@ -25,7 +25,7 @@ function Tracking() {
                 Habarning ko’rinishi
               </h1>
             </div>
-            <div className="w-[762px] h-[535px] pt-[24px] ml-[40px]">
+            <div className="w-[762px] h-[600px] pt-[24px] ml-[40px]">
               <Letter></Letter>
             </div>
           </div>

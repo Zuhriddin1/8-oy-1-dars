@@ -20,6 +20,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import UpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { green } from "@mui/material/colors";
 import add from "../assets/Add.svg";
+import phone from "../assets/Phone.svg";
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -316,6 +317,10 @@ const Letter = () => {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className=" w-[700px] -translate-y-72 translate-x-[700px]">
+        <img src={phone} alt="" />
       </div>
     </>
   );

@@ -119,11 +119,9 @@ const Letter = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   const handleChangeIndex = (index) => {
     setValue(index);
   };
-
   const transitionDuration = {
     enter: theme.transitions.duration.enteringScreen,
     exit: theme.transitions.duration.leavingScreen,
@@ -228,7 +226,7 @@ const Letter = () => {
             </p>
           </div>
         </div>
-        <div className="translate-y-32 -translate-x-2">
+        <div className="translate-y-56 -translate-x-2 ">
           <AppBar position="static" color="default">
             <Tabs
               value={value}
